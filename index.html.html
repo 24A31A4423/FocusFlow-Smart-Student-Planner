@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocusFlow - Student Learning Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <h2>✦ FocusFlow</h2>
+        <span>LEARN • PLAN • GROW</span>
+    </nav>
+    <h1>Make Today Count!</h1>
+    <p>Plan your learning. Track your progress. Achieve your goals.</p>
+</header>
+
+<main>
+
+    <!-- DASHBOARD -->
+    <section class="stats">
+        <div class="card">
+            <h3>Total Tasks</h3>
+            <h2 id="totalTasks">0</h2>
+        </div>
+        <div class="card">
+            <h3>Completed Tasks</h3>
+            <h2 id="completedTasks">0</h2>
+        </div>
+        <div class="card">
+            <h3>Task Progress</h3>
+            <h2 id="percentage">0%</h2>
+        </div>
+    </section>
+
+    <!-- STUDY TASKS -->
+    <section class="planner">
+        <div class="panel">
+            <h2>📚 My Study Tasks</h2>
+
+            <form id="taskForm">
+                <input id="taskInput"
+                       type="text"
+                       placeholder="Enter your study task"
+                       maxlength="100"
+                       required>
+
+                <select id="subject">
+                    <option>General</option>
+                    <option>Math</option>
+                    <option>Science</option>
+                    <option>English</option>
+                    <option>Computer Science</option>
+                    <option>History</option>
+                </select>
+
+                <button type="submit">+ Add Task</button>
+            </form>
+
+            <div id="taskList"></div>
+        </div>
+
+        <div class="panel">
+            <h2>📊 Your Progress</h2>
+            <p id="progressText">0 of 0 tasks completed</p>
+
+            <div class="progress">
+                <div id="progressBar"></div>
+            </div>
+
+            <h3>💡 Daily Study Tip</h3>
+            <p id="studyTip" class="tip"></p>
+
+            <button id="clearButton" class="danger">
+                Clear Completed Tasks
+            </button>
+        </div>
+    </section>
+
+    <!-- COURSES -->
+    <section class="courses">
+        <h2>🎓 Explore Courses</h2>
+        <p>Choose a course and start learning new skills!</p>
+
+        <div class="course-grid">
+
+            <article class="course-card">
+                <div class="course-icon">🌐</div>
+                <h3>HTML for Beginners</h3>
+                <p>Learn website structure and HTML basics.</p>
+                <button onclick="openCourse('html')">Start Learning</button>
+                <p class="course-status" id="status-html">0% completed</p>
+            </article>
+
+            <article class="course-card">
+                <div class="course-icon">🎨</div>
+                <h3>CSS for Beginners</h3>
+                <p>Learn colors, layouts and website design.</p>
+                <button onclick="openCourse('css')">Start Learning</button>
+                <p class="course-status" id="status-css">0% completed</p>
+            </article>
+
+            <article class="course-card">
+                <div class="course-icon">💻</div>
+                <h3>JavaScript</h3>
+                <p>Learn programming and interactive websites.</p>
+                <button onclick="openCourse('js')">Start Learning</button>
+                <p class="course-status" id="status-js">0% completed</p>
+            </article>
+
+            <article class="course-card">
+                <div class="course-icon">🐍</div>
+                <h3>Python</h3>
+                <p>Learn Python programming from the beginning.</p>
+                <button onclick="openCourse('python')">Start Learning</button>
+                <p class="course-status" id="status-python">0% completed</p>
+            </article>
+
+        </div>
+
+        <!-- LESSON DISPLAY -->
+        <div id="courseContent" class="course-content">
+            <h3>📖 Your Learning Area</h3>
+            <p>Select a course above to see its lessons.</p>
+        </div>
+    </section>
+
+    <!-- STUDY TIMER -->
+    <section class="timer panel">
+        <h2>⏱️ Focus Timer</h2>
+        <p>Concentrate for 25 minutes and take a short break.</p>
+
+        <div id="timerDisplay">25:00</div>
+
+        <div class="timer-buttons">
+            <button id="startTimer">Start</button>
+            <button id="pauseTimer">Pause</button>
+            <button id="resetTimer" class="danger">Reset</button>
+        </div>
+
+        <p id="timerMessage">Ready for your next study session?</p>
+    </section>
+
+</main>
+
+<footer>
+    <p>FocusFlow © 2026 | Learn. Focus. Achieve. ❤️</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
